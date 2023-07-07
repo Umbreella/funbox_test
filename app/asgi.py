@@ -8,7 +8,10 @@ from app.routers import add_routers
 
 
 def get_asgi_application():
-    app = FastAPI()
+    app = FastAPI(**{
+        'docs_url': '/api/docs/',
+        'openapi_url': '/api/docs/json/',
+    })
 
     try:
         redis_cli.ft().info()
