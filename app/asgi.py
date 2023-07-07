@@ -4,6 +4,7 @@ from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.exceptions import ResponseError
 
 from app.redis import redis_cli
+from app.routers import add_routers
 
 
 def get_asgi_application():
@@ -21,5 +22,7 @@ def get_asgi_application():
                 'index_type': IndexType.JSON,
             }),
         })
+
+    add_routers(app)
 
     return app
