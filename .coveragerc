@@ -1,0 +1,20 @@
+[run]
+concurrency =
+    thread
+
+source = .
+command_line = test.py
+omit =
+    *__init__*,
+    ./venv/*,
+    tests/*,
+    app/*,
+    ./*.py,
+
+[report]
+omit =
+    *__init__*,
+    ./venv/*,
+    tests/*,
+    app/*,
+    ./*.py,
