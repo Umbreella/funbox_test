@@ -18,7 +18,7 @@ def get_asgi_application():
     except ResponseError:
         redis_cli.ft().create_index(**{
             'fields': (
-                NumericField("$.created_at", as_name="created_at"),
+                NumericField('$.created_at', as_name='created_at'),
             ),
             'definition': IndexDefinition(**{
                 'prefix': ['links:', ],
