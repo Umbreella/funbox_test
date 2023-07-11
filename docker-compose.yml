@@ -1,14 +1,16 @@
 version: "3"
 
 services:
-  redis:
-    image: redis/redis-stack-server:6.2.6-v7
-    container_name: redis
-    ports:
-      - 6379:6379
+    redis:
+        image: redis/redis-stack-server:6.2.6-v7
+        container_name: redis
 
-  redis-ui:
-    image: redislabs/redisinsight:1.14.0
-    container_name: redis-ui
-    ports:
-      - 8001:8001
+    fastapi:
+        image: umbreella/funbox_test:latest
+        container_name: fastapi
+        ports:
+            - 8000:8000
+        environment:
+            - ENV_FILE=.env
+        volumes:
+            - .env.fastapi:/usr/src/app/.env

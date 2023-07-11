@@ -49,8 +49,10 @@ services:
     image: umbreella/funbox_test:latest
     ports:
       - [your_open_port]:8000
-    env_file:
-      - [path_to_env_file]
+    environment:
+      - ENV_FILE=.env
+    volumes:
+      - [path_to_env_file]:/usr/src/app/.env
 ```
 
 * Docker-compose run
