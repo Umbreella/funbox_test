@@ -3,6 +3,7 @@ from redis.commands.search.field import NumericField
 from redis.commands.search.indexDefinition import IndexDefinition, IndexType
 from redis.exceptions import ResponseError
 
+from app.middleware import add_middleware
 from app.redis import redis_cli
 from app.routers import add_routers
 
@@ -27,5 +28,6 @@ def get_asgi_application():
         })
 
     add_routers(app)
+    add_middleware(app)
 
     return app
