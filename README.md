@@ -65,7 +65,7 @@ docker-compose up -d
 
 * API docs
 
-```commandline
+```jsonpath
 [your_ip_address]/api/docs/
 ```
 
