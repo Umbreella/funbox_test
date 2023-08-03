@@ -68,3 +68,7 @@ docker-compose up -d
 ```commandline
 [your_ip_address]/api/docs/
 ```
+
+## Live Demo
+
+* [https://funbox.umbreella-dev.ru/api/docs/](https://funbox.umbreella-dev.ru/api/docs/)
